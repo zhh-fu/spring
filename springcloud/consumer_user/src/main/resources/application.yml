@@ -1,0 +1,17 @@
+spring:
+  application:
+  #服务使用者应用的名字，也是在注册中的应用标识
+    name: consumerUser
+
+server:
+  #使用者访问端口
+  port: 8200
+
+eureka:
+  instance:
+    prefer-ip-address: true  #注册服务的时候使用服务ip地址
+
+  client:
+    service-url:
+    #eureka注册中心的地址
+      defaultZone: http://localhost:8761/eureka/

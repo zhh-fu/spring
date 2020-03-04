@@ -1,0 +1,18 @@
+server:
+  port: 8001 #服务提供者端口
+spring:
+  application:
+  #应用提供者的名字，也是在eureka注册中心的标识
+  #同一个应用多次注册时应用名称要相同
+  #如果注册在多台机器上可使用相同的端口，即多次打包即可
+  #如果注册在同一个机器上，端口号必须不同
+    name: providerTicket
+
+eureka:
+  instance:
+    prefer-ip-address: true  #注册服务的时候使用服务ip地址
+
+  client:
+    service-url:
+    #eureka注册中心的地址
+      defaultZone: http://localhost:8761/eureka/
